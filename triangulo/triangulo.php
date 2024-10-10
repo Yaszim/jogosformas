@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $resultado = $triangulo->incluir();
                         break;
                     }
-                case ("Excluir"):
+                case ("excluir"):
                     $resultado = $triangulo->excluir();
                     break;
             }

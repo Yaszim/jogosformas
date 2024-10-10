@@ -18,6 +18,7 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-lg">
+    <a href="../index.php" class="text-blue-600 hover:underline mb-4 inline-block">Menu</a>
         <?php
             $id = isset($_GET['id']) ? $_GET['id'] : 0; 
         
@@ -39,6 +40,7 @@
                 </div>
                 <div class="flex justify-center">
                     <a href="../index.php" class="bg-blue-500 text-white rounded p-2 hover:bg-blue-600">Voltar ao Menu</a>
+                    <a href="./cadastro.php" class="bg-blue-500 text-white rounded p-2 hover:bg-blue-600">Cadastrar novo circulo</a>
                 </div>
                 <?php
             } else {

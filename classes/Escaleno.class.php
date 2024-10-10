@@ -24,7 +24,13 @@ class Escaleno extends Triangulo
         return Database::executar($sql, $parametros);
     }
 
-    public function excluir() { /* implementar */ }
+    public function excluir() {
+        $sql = 'DELETE 
+                FROM triangulo 
+                WHERE id = :id';
+        $parametros = array(':id'=> $this->getId());
+        return Database::executar($sql, $parametros);
+    }
     
     public function alterar() { 
         $sql = 'UPDATE triangulo
@@ -94,15 +100,35 @@ class Escaleno extends Triangulo
 
     public function desenhar()
     {
-        return "<div  style='
-                                    width: 0;
-                                    height: 0;
-                                    border-left:" . $this->getLado1()  . $this->getUn()->getUn() . " solid transparent;
-                                    border-right:" . $this->getLado2() . $this->getUn()->getUn() . " solid transparent;
-                                    border-bottom:" . $this->getLado3()  . $this->getUn()->getUn() . " solid " . $this->getCor() . ";
-                                    background-image:" . $this->getFundo() . ";
-                                    background-size: cover;
-                                    '></div>";
+        $lado = $this->getLado1();
+        $base = $this->getLado3();
+        $un = $this->getUn()->getUn();
+        return "
+            <div style='position: relative; display: inline-block;'>
+                <div style='
+                    width: 0;
+                    height: 0;
+                    border-left: " . $lado . "$un solid transparent;
+                    border-right: " . $lado .  "$un solid transparent;
+                    border-bottom: " . $base . "$un solid " . $this->getCor() . ";
+                    position: relative;
+                '>
+                    <div style='
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: " . ( 2 * $lado) . "$un;
+                        height: " . $base . "$un;
+                        background-image: url(" . '"' . $this->getFundo() . '"' . ");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+                        pointer-events: none;
+                    '></div>
+                </div>
+            </div>";
     }
 
     public function calcularArea()

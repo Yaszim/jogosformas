@@ -66,6 +66,7 @@ include_once('quadrado.php');
                                 <td class='border-b p-4'>{$forma->getLado()}</td>
                                 <td class='border-b p-4' style='color: {$forma->getCor()}'>{$forma->getCor()}</td>
                                 <td class='border-b p-4'>{$forma->getUn()->getUn()}</td>
+                                <td class='py-2 px-4 border-b'><div class='inline-block w-5 h-5 rounded-full' style='background-color: " . $forma->getCor() . "; background-image: url(\"{$forma->getFundo()}\")'></div></td>
                                 <td class='border-b p-4'><a href='consulta.php?id={$forma->getId()}' class='text-blue-600 hover:underline'>Visualizar</a></td>
                                 <td class='border-b p-4'><a href='cadastro.php?id={$forma->getId()}' class='text-blue-600 hover:underline'>Editar</a></td>
                               </tr>";

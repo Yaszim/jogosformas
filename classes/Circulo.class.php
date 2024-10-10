@@ -7,7 +7,7 @@ class Circulo extends Formas
 {
     private $raio;
 
-    public function  __construct($id = 0, $raio = 1, $cor = "black", UnidadeMedida $un = null, $fundo = "null")
+    public function  __construct($id = 0, $raio = 1, $cor = "", UnidadeMedida $un = null, $fundo = "null")
     {
         parent::__construct($id, $cor, $un, $fundo);
         $this->setRaio($raio);
@@ -50,8 +50,8 @@ class Circulo extends Formas
     public function alterar()
     {
         $sql = 'UPDATE circulo
-                SET raio = :raio, cor = :cor, un_id = :un, id = :id, fundo = :fundo
-                WHERE id_circulo = :id';
+                SET raio = :raio, cor = :cor, id_un = :un, fundo = :fundo
+                WHERE id = :id';
         $parametros = array(':raio' => $this->raio, 
                             ':cor' => parent::getCor(), 
                             ':un' => parent::getUn()->getId(), 
@@ -78,7 +78,7 @@ class Circulo extends Formas
                     $busca = "%{$busca}%";
                     break;
                 case 4:
-                    $sql .= " INNER JOIN un ON (unidademedida.un_id = quadrado.un_id) WHERE formas.unidademedida LIKE :busca";
+                    $sql .= " INNER JOIN un ON (unidademedida.un_id = circulo.id_un) WHERE formas.unidademedida LIKE :busca";
                     $busca = "%{$busca}%";
                     break;
                 case 5:
@@ -110,7 +110,9 @@ class Circulo extends Formas
                 width:{$diametro}{$this->getUn()->getUn()};
                 height:{$diametro}{$this->getUn()->getUn()};
                 background-color:{$this->getCor()};
-                background-image:url(\"{$this->getFundo()}\");background-size:contain; border-radius:50%'></div>";
+                background-image:url(\"{$this->getFundo()}\");
+                background-size:contain; 
+                border-radius:50%'></div>";
     }
 
     public function calcularArea()

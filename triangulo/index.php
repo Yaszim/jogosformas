@@ -125,7 +125,7 @@ require_once("triangulo.php");
                              <td>" . $triangulo->getUn()->getUn() . "</td>
                              <td>" . $triangulo->calcularPerimetro($triangulo) . $triangulo->getUn()->getUn() . "</td>
                              <td>" . $triangulo->calcularArea($triangulo) . $triangulo->getUn()->getUn() . "²</td>
-                             <td><a href='index.php?id=" . $triangulo->getId() . "' class='text-pink-400 hover:text-purple-500'>" . $triangulo->desenhar($triangulo) . "</a></td>
+                             <td><a href='index.php?id=" . $triangulo->getId() . "' class='text-pink-400 hover:text-purple-500'>" . $triangulo->desenhar($triangulo) . " </a></td>
                         </tr>";
                 }
 ?>

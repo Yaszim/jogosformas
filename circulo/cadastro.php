@@ -23,7 +23,7 @@ session_start();
             <input type="number" class="border rounded p-2 w-full mb-4" name="raio" id="raio" value="<?= $id ? $circulo->getRaio() : 0 ?>" placeholder="Raio do seu círculo">
 
             <label class="block mb-2" for="cor">Cor</label>
-            <input type="color" class="border rounded p-2 w-full mb-4" name="cor" id="cor" value="<?= $id ? $forma->getCor() : 'black' ?>">
+            <input type="color" class="border rounded p-2 w-full mb-4" name="cor" id="cor" value="<?= $id ? $circulo->getCor() : 'black' ?>">
 
             <label class="block mb-2" for="unidade">Unidade</label>
             <select class="border rounded p-2 w-full mb-4" name="un" id="un">
@@ -45,7 +45,7 @@ session_start();
 
             <div class="flex justify-between mt-4">
                 <input type="submit" name="acao" id="acao" value="Salvar" class="bg-blue-500 text-white rounded p-2 hover:bg-blue-600">
-                <input type="submit" name="acao" id="acao" value="Alterar" class="bg-yellow-500 text-white rounded p-2 hover:bg-yellow-600">
+             
                 <input type="submit" name="acao" id="acao" value="Excluir" class="bg-red-500 text-white rounded p-2 hover:bg-red-600">
             </div>
         </form>
