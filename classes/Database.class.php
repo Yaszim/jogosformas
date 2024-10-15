@@ -1,6 +1,7 @@
 <?php
 require_once('../config/config.inc.php');
 
+
 /**
  * A classe Database é responsável pela conexão
  * com o banco de dados

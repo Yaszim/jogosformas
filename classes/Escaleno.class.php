@@ -1,6 +1,5 @@
 <?php
-require_once("../classes/Triangulo.class.php");
-require_once("../classes/Database.class.php");
+require_once("../classes/autoload.php");
 
 class Escaleno extends Triangulo
 {

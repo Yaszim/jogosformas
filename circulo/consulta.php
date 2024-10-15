@@ -1,5 +1,5 @@
 <?php
-    require_once("../classes/Circulo.class.php");
+    require_once("../classes/autoload.php");
 ?>
 
 <!DOCTYPE html>

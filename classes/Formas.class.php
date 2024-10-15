@@ -1,5 +1,5 @@
 <?php
-
+require_once("../classes/autoload.php");
 abstract class Formas{
     private $id; 
     private $cor;

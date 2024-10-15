@@ -6,6 +6,8 @@
     <title>Consulta</title>
     <?php
     session_start();
+    require_once("../classes/autoload.php");
+    require_once '../config/config.inc.php';
     include_once('circulo.php');
     ?>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,6 +15,7 @@
 <body class="bg-gray-100 p-5">
     <form method="get" class="bg-white p-5 rounded-lg shadow-md mb-5">
     <a href="../index.php" class="text-blue-600 hover:underline mb-4 inline-block">Menu</a>
+    <a href="./cadastro.php" class="text-blue-600 hover:underline mb-4 inline-block">Novo Circulo</a>
         <h4 class="text-lg font-semibold mb-2">Busca</h4>
         <div class="mb-3">
             <input type="text" name="busca" id="busca" placeholder="Busca" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">

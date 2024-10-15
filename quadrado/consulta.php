@@ -1,5 +1,6 @@
 <?php
-    require_once("../classes/Quadrado.class.php");
+   require_once("../classes/autoload.php");
+   require_once '../config/config.inc.php';
 ?>
 
 <!DOCTYPE html>

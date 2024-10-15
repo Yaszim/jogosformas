@@ -1,5 +1,6 @@
 <?php  
-require_once("../classes/Triangulo.class.php");
+require_once("../classes/autoload.php");
+require_once '../config/config.inc.php';
 require_once("triangulo.php");
 ?>
 

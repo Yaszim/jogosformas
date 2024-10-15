@@ -1,7 +1,6 @@
 <?php
-require_once("../classes/Database.class.php");
-require_once("../classes/Formas.class.php");
-require_once("../classes/UnidadeMedida.class.php");
+require_once("../classes/autoload.php");
+
 
 class Circulo extends Formas
 {

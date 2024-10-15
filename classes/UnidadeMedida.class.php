@@ -1,5 +1,5 @@
 <?php
-    require_once("../classes/Database.class.php");
+    require_once("../classes/autoload.php");
 
 class UnidadeMedida{
     private $id;
@@ -37,11 +37,11 @@ class UnidadeMedida{
     
     public function excluir(){
         $sql = 'DELETE 
-                    FROM unidademedida
-                    WHERE id = :id';
+                FROM unidademedida 
+                WHERE id = :id';
         $parametros = array(':id'=> $this->getId());
         return Database::executar($sql, $parametros);
-    }  
+    }
     
     public function alterar(){
         $sql = 'UPDATE unidademedida 
@@ -65,7 +65,8 @@ class UnidadeMedida{
             $parametros = array(':busca'=>$busca); 
         $comando = Database::executar($sql, $parametros); 
         $unidades = array();            
-        while($registro = $comando->fetch(PDO::FETCH_ASSOC)){      
+        while($registro = $comando->fetch(PDO::FETCH_ASSOC)){   
+               
             $un = new UnidadeMedida($registro['id'],$registro['un']);
             array_push($unidades,$un); 
         }

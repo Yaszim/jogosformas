@@ -1,5 +1,7 @@
 <?php  
 session_start();
+require_once("../classes/autoload.php");
+require_once '../config/config.inc.php';
 include_once('quadrado.php'); 
 ?>
 

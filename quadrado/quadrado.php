@@ -1,8 +1,8 @@
 <?php
 /** Controle de Quadrado */
 //session_start();
-require_once("../classes/Quadrado.class.php");
-require_once("../classes/UnidadeMedida.class.php");
+require_once("../classes/autoload.php");
+require_once '../config/config.inc.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
